@@ -9,27 +9,32 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+
+
 import dto.UsuarioDTO;
 import model.Usuario;
-import repository.ClienteRepository;
+import repository.UsuarioRepository;
+
+
+
 
 
 @CrossOrigin
 @RestController
 public class UsuarioREST {
 	
-	@Autowired
-	private ClienteRepository ClienteRepo;
+	@Autowired(required=true)
+	private UsuarioRepository UsuarioRepo;
 	
 	@Autowired
 	private ModelMapper mapper;
 	
 	
-	@PostMapping("/CadastroCliente")
+	@PostMapping("/CadastroUsuario")
 	public ResponseEntity<UsuarioDTO> cadastrar (@RequestBody UsuarioDTO UsuarioDTO){
 		try {
 			Usuario usuario = mapper.map(UsuarioDTO, Usuario.class);
-			usuario = ClienteRepo.save(usuario);
+			usuario = UsuarioRepo.save(usuario);
 			UsuarioDTO = mapper.map(usuario, UsuarioDTO.class);
 			return ResponseEntity.status(200).body(UsuarioDTO);
 		}
