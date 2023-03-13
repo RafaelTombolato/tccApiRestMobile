@@ -1,4 +1,4 @@
-package dto;
+package br.ufpr.tcc.dto;
 
 import java.io.Serializable;
 

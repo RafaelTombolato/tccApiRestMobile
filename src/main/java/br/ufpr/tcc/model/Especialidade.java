@@ -1,24 +1,22 @@
-package model;
+package br.ufpr.tcc.model;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 
 
 
 
 @Entity
-@Table(name="tb_tipo_usuario")
+@Table(name="tb_especialidade")
 
-
-
-public class TipoUsuario implements Serializable {
-	
+public class Especialidade implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,12 +26,12 @@ public class TipoUsuario implements Serializable {
 	@Column(name="nome")
     private String nome;
 
-	public TipoUsuario() {
+	public Especialidade() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public TipoUsuario(int id, String nome) {
+	public Especialidade(int id, String nome) {
 		super();
 		this.id = id;
 		this.nome = nome;

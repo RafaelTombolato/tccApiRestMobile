@@ -1,5 +1,7 @@
 package br.ufpr.tcc.rest;
 
+
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -11,9 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 
-import dto.UsuarioDTO;
-import model.Usuario;
-import repository.UsuarioRepository;
+import br.ufpr.tcc.TccApplication;
+import br.ufpr.tcc.dto.UsuarioDTO;
+import br.ufpr.tcc.model.Usuario;
+import br.ufpr.tcc.repository.UsuarioRepository;
+
 
 
 
@@ -23,14 +27,14 @@ import repository.UsuarioRepository;
 @RestController
 public class UsuarioREST {
 	
-	@Autowired(required=true)
+	@Autowired
 	private UsuarioRepository UsuarioRepo;
 	
 	@Autowired
 	private ModelMapper mapper;
 	
 	
-	@PostMapping("/CadastroUsuario")
+	@PostMapping("/UsuarioCadastro")
 	public ResponseEntity<UsuarioDTO> cadastrar (@RequestBody UsuarioDTO UsuarioDTO){
 		try {
 			Usuario usuario = mapper.map(UsuarioDTO, Usuario.class);
