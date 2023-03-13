@@ -44,29 +44,10 @@ public class Usuario implements Serializable{
     private boolean bloqueio;
     
 	@Column(name="tipo_usuario_id")
-    private TipoUsuario tipoUsuario;
+    private int tipo_usuario_id;
     
 	@Column(name="especialidade_id")
-    private Especialidade especialidade;
-
-	public Usuario() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public Usuario(int id, String nomeUsuario, String cpf, String telefone, String email, String senha,
-			boolean bloqueio, TipoUsuario tipoUsuario, Especialidade especialidade) {
-		super();
-		this.id = id;
-		this.nomeUsuario = nomeUsuario;
-		this.cpf = cpf;
-		this.telefone = telefone;
-		this.email = email;
-		this.senha = senha;
-		this.bloqueio = bloqueio;
-		this.tipoUsuario = tipoUsuario;
-		this.especialidade = especialidade;
-	}
+    private int especialidade_id;
 
 	public int getId() {
 		return id;
@@ -124,24 +105,40 @@ public class Usuario implements Serializable{
 		this.bloqueio = bloqueio;
 	}
 
-	public TipoUsuario getTipoUsuario() {
-		return tipoUsuario;
+	public int getTipo_usuario_id() {
+		return tipo_usuario_id;
 	}
 
-	public void setTipoUsuario(TipoUsuario tipoUsuario) {
-		this.tipoUsuario = tipoUsuario;
+	public void setTipo_usuario_id(int tipo_usuario_id) {
+		this.tipo_usuario_id = tipo_usuario_id;
 	}
 
-	public Especialidade getEspecialidade() {
-		return especialidade;
+	public int getEspecialidade_id() {
+		return especialidade_id;
 	}
 
-	public void setEspecialidade(Especialidade especialidade) {
-		this.especialidade = especialidade;
+	public void setEspecialidade_id(int especialidade_id) {
+		this.especialidade_id = especialidade_id;
 	}
-	
-	
-	
+
+	public Usuario(int id, String nomeUsuario, String cpf, String telefone, String email, String senha,
+			boolean bloqueio, int tipo_usuario_id, int especialidade_id) {
+		super();
+		this.id = id;
+		this.nomeUsuario = nomeUsuario;
+		this.cpf = cpf;
+		this.telefone = telefone;
+		this.email = email;
+		this.senha = senha;
+		this.bloqueio = bloqueio;
+		this.tipo_usuario_id = tipo_usuario_id;
+		this.especialidade_id = especialidade_id;
+	}
+
+	public Usuario() {
+		super();
+	}
+
 	
 	
 	
